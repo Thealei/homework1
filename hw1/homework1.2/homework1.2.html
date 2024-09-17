@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会员注册</title>
+
+    <style>
+        .tips{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 标题 -->
+    <h3 style="color: blue;">欢迎注册会员</h3>
+    <!-- 内容 -->
+     <div>
+        <form action="" method="get">
+        <!-- 手机号码 -->
+        <label for="phonenumber" >手机号码：</label>
+        <input type="text"  name="phonenumber"id="phonenumber" maxlength="11" placeholder="11位手机号"z><span class="tips">必填</span><br>
+        <!-- 密码 -->
+        <label for="password">创建密码：</label>
+        <input type="password"  name="password"id="password"  maxlength="8" placeholder="8位密码"><span class="tips">必填</span><br>
+        <!-- 邮箱 -->
+        <label for="mail">注册邮箱：</label>
+        <input type="text" name="mail" id="mail" placeholder="例如:wustzz@qq.com"><span class="tips">必填</span><br>
+        <!-- 验证码 -->
+        <label for="captcha">验证码:</label>
+        <input type="text" name="captcha" id="captcha"><br>
+        <!-- 性别 -->
+        性别:<label><input type="radio" name="sex" value="male">男</label>
+        <label></label><input type="radio" name="sex" value="female">女</label><br>
+        <!-- 出生日期 -->
+        <label for="birth">出生日期:</label>
+        <input type="date" name="birth" id="birth"><br>
+        <!-- 年龄 -->
+        <label for="age">年龄:</label>
+        <input type="text" name="age" id="age"><br>
+        <!-- 籍贯 -->
+        籍贯:<select name="province" size="1">
+            <option value="0" selected="selected">湖北省</option>
+            <option value="1">湖南省</option>
+        </select>
+        <select name="city" size="1">
+            <option value="0" selected="selected">武汉</option>
+            <option value="1">长沙</option>
+        </select><br>
+        <!-- 月薪 -->
+        月薪:<input type="range" id="score" name="score" min="0.0" max="5000" step="0.5" value="0">
+        <span id="msg"></span><br>
+        <!-- 个人爱好 -->
+        个人爱好：
+        <label><input type="checkbox" name="like" id="sing">唱歌</label>
+        <label><input type="checkbox" name="like" id="run">跑步</label>
+        <label><input type="checkbox" name="like" id="swim">游泳</label><br>
+        <!-- 个人照片 -->
+        个人照片:
+        <input type="file" name="file" id="file" accept="image/*"><br>
+        <!-- 简历 -->
+        简历：
+        <textarea name="resume" id="resume" cols="50" rows="10"></textarea><br>
+        <!-- 提交重填按钮 -->
+        <input type="submit" value="提交">
+        <input type="reset" value="重填">
+        </form>
+     </div>
+
+    <!-- 脚本 -->
+    <div>
+        <script>
+        var msg = document.getElementById("msg"); // 根据id值找到span元素
+        window.onload = function () { 
+        msg.innerHTML = document.getElementById("score").value; // 获取区间域初始value值
+        }
+        document.getElementById("score").onchange = function () { 
+        msg.innerHTML = this.value; // 将当前区间域的value作为span元素的内容
+        }
+        </script>
+    </div>
+ 
+</body>
+</html>
